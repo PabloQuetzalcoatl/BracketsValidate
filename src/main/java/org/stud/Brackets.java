@@ -8,7 +8,7 @@ public class Brackets {
         List<String> arguments = Arrays.asList(args);
         String inputString = String.join("", args);
         if (!arguments.isEmpty()) {
-            boolean r = checkBrackets(inputString);
+            boolean r = checkBrackets(inputString, '(', ')');
             if (r){
                 System.out.println(inputString+"- brackets OK");
             }else {
@@ -19,13 +19,13 @@ public class Brackets {
         }
     }
 
-    public static boolean checkBrackets(String inputString) {
+    public static boolean checkBrackets(String inputString, char openBracket, char closeBracket) {
         int openBracketCount = 0;
         for (int i = 0; i < inputString.length(); i++) {
             char ch = inputString.charAt(i);
-            if (ch == '(') {
+            if (ch == openBracket) {
                 openBracketCount++;
-            }else if (ch == ')') {
+            }else if (ch == closeBracket) {
                 openBracketCount--;
             }
         }
