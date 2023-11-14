@@ -12,7 +12,7 @@ public class Brackets {
             if (r){
                 System.out.println(inputString+"- brackets OK");
             }else {
-                System.out.println(inputString+"- brackets Fail");
+                System.out.println(inputString+"- missing bracket");
             }
         } else {
             System.out.println("Input string is empty");
