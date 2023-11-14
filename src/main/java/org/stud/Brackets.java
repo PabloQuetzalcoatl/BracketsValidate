@@ -1,0 +1,39 @@
+package org.stud;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Brackets {
+    public static void main(String[] args) {
+        List<String> arguments = Arrays.asList(args);
+        String inputString = String.join("", args);
+        if (!arguments.isEmpty()) {
+            boolean r = checkBrackets(inputString);
+            if (r){
+                System.out.println(inputString+"- brackets OK");
+            }else {
+                System.out.println(inputString+"- brackets Fail");
+            }
+        } else {
+            System.out.println("Input string is empty");
+        }
+    }
+
+    public static boolean checkBrackets(String inputString) {
+        int openBracketCount = 0;
+        for (int i = 0; i < inputString.length(); i++) {
+            char ch = inputString.charAt(i);
+            if (ch == '(') {
+                openBracketCount++;
+            }else if (ch == ')') {
+                openBracketCount--;
+            }
+        }
+
+        if (openBracketCount==0){
+            return true;
+        }else {
+            return  false;
+        }
+    }
+}
